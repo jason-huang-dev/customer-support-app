@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider, SignedIn, SignedOut, SignIn, UserButton } from "@clerk/nextjs";
+import { Typography } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,8 +12,26 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <header className="flex justify-between p-4">
+            <SignedIn>
+              <Typography variant="h6">Headerstarter AI</Typography>
+            </SignedIn>
+            <UserButton style={{ width: '40px', height: '40px' }} />
+          </header>
+
+          <main className="flex justify-center items-center h-screen">
+            <SignedOut>
+              <SignIn routing="hash" />
+            </SignedOut>
+            <SignedIn>
+              {children}
+            </SignedIn>
+          </main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
