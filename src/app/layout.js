@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
             <UserButton style={{ width: '40px', height: '40px' }} />
           </header>
 
-          <main className="flex justify-center items-center h-screen">
+          <main className="flex justify-center items-center h-screen bg-lime-500">
             <SignedOut>
               <SignIn routing="hash" />
             </SignedOut>
