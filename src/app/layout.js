@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           </header>
 
           <main 
-            className="flex justify-center h-screen"
+            className="flex justify-center items-center h-screen"
           >
             <SignedOut>
               <SignIn routing="hash" />
