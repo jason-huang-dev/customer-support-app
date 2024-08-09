@@ -22,7 +22,7 @@ export default function Home() {
     {
       role: "assistant",
       content:
-        "Hello! Thank you for contacting CapitalOne. How can I assist you today?",
+        "Hello! Thank you for contacting CapitalOne. I am a mock assistant and cannot help with banking, but can give you tips on banking. How can I assist you today?",
     },
   ]);
   const [message, setMessage] = useState("");
